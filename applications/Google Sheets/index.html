@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <script src="script.js" charset="utf-8"></script>
+</head>
+
+<h2 style="color: white;">Please Input Google Sheets URL</h2>
+<dir><input id="docURI" type="text" onkeydown="navigate(event);" size="40"></input>
+  <button type="button" name="goBTN" onclick="
+  let checkURI = document.getElementById('docURI').value;
+  if (checkURI.includes('https://docs.google.com/spreadsheets/')) {
+    window.location.replace(checkURI);
+  }">Go</button></dir>
+<script type="text/javascript">
+  function navigate(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if(code == 13 || code == 'btn') {
+      let checkURI = document.getElementById('docURI').value;
+      if (checkURI.includes("https://docs.google.com/spreadsheets")) {
+        window.location.replace(checkURI);
+      }
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Notepad</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+</head>
+
+<body>
+  <input id="loadBTN" class="text" type="file" onchange="readfile(this.files)">
+  <div class="boxes">
+    <input class="boxes" type="checkbox" id="spellcheck" onchange="toggleSpelling();" checked>
+    <label class="boxes" for="spellcheck">Spellcheck</label>
+  </div>
+
+  <input id="save" type="button" value="save on disk" onclick="download()">
+  <textarea class="text" id="mainInput" spellcheck="true"
+  onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;
+    this.value=v.substring(0, s)+'\t'+v.substring(e);
+    this.selectionStart=this.selectionEnd=s+1;return false;}" autofocus></textarea>
+</body>
+
+<footer>
+  <script src="script.js" charset="utf-8"></script>
+</footer>
+</html>

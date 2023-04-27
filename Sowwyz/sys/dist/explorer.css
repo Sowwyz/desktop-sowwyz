@@ -1,0 +1,55 @@
+html {
+  color: #EFF0F1;
+  background-color: #31363B;
+}
+
+.preview {
+  position: absolute;
+  left: 255px;
+  top: 45px;
+  background-color: #232629;
+  color: #EBECED;
+  width: calc(100% - 257px);
+  height: calc(100% - 47px - 32px);
+  border-style: solid;
+  border-bottom: none;
+  border-width: thin;
+  font-size: 15px;
+  padding-top: 32px;
+  overflow: auto;
+}
+
+#backBTN {
+  position: fixed;
+  background-color: transparent;
+  color: #EBECED;
+  border-style: double;
+  border-color: #ccc;
+  top: 22px;
+}
+#backBTN:hover {
+  background-color: #4f4f60;
+}
+
+.heading {
+  position: relative;
+  left: 40px;
+  width: max-content;
+}
+
+.searchbar {
+  position: absolute;
+  top: 45px;
+  left: 255px;
+  width: calc(100% - 500px);
+  z-index: 10;
+}
+
+a:link, a:visited, a:active {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+}
+a:hover {
+  color: white;
+}

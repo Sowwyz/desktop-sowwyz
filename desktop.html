@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" onkeyup="esc(event);" onmousemove="screensaverTimeout=200;">
+<head>
+    <!--Sowwyz#1337-->
+    <meta charset="UTF-8">
+    <title>Sowwyz</title>
+    <link rel="stylesheet" href="./Sowwyz/sys/dist/style.css">
+    <link rel="stylesheet" href="./Sowwyz/sys/dist/desktop.css">
+    <link rel="shortcut icon" href="./Sowwyz/icons/favicon.png">
+    <!--Sowwyz#1337-->
+    <!--JS Librarys-->>
+    <script src='./Sowwyz/lib/jquery.js'></script>
+    <script src="./Sowwyz/lib/jquery-ui.js"></script>
+    <script src='./Sowwyz/lib/masonry.min.js'></script>
+</head>
+<body>
+    <!-- Sowwyz#1337 -->
+    <!-- Sowwyz#1337 -->
+    <div id="desktopBG" class="desktop">
+        <div class="desktop__item" ondblclick="startProgram('', 'https://www.bing.com');">
+            <img class="desktop_icons" src="./Sowwyz/icons/google.png"></img>
+            <text>Google</text>
+        </div>
+        <div class="desktop__item" ondblclick="startProgram('Notepad', '');">
+            <img class="desktop_icons" src="./applications/Notepad/favicon.png"></img>
+            <text>Notepad</text>
+        </div>
+        <div class="desktop__item" ondblclick="startProgram('', 'http://localhost:8080/?dir=Home');">
+            <img class="desktop_icons" src="./Sowwyz/icons/files.png"></img>
+            <text>Files</text>
+        </div>
+        <div class="desktop__item" ondblclick="startProgram('Google Docs', '');">
+            <img class="desktop_icons" src="./applications/Google Docs/favicon.png"></img>
+            <text>Docs</text>
+        </div>
+        <div class="desktop__item" ondblclick="startProgram('Google Slides', '');">
+            <img class="desktop_icons" src="./applications/Google Slides/favicon.png"></img>
+            <text>Slides</text>
+        </div>
+        <div class="desktop__item" ondblclick="startProgram('Google Sheets', '');">
+            <img class="desktop_icons" src="./applications/Google Sheets/favicon.png"></img>
+            <text>Sheets</text>
+        </div>
+
+        <div class="start-menu-fade"></div>
+        <a id="editDesktopBTN" href="#" onclick="desktopContextMenu(window.innerWidth - 200, 0, true);">☰</a>
+        <!-- Sowwyz#1337 -->
+        <!--CONTEXT MENU-->
+        <ul class="contextMenu" id="desktopContextMenu" style="display:none;">
+            <strong id="contextMenuTitle"><u>Sowwyz</u></strong>
+            <br>
+            <a onclick="editDesktop();">Edit Desktop</a>
+            <br>
+            <a onclick="initializeDesktop();">Refresh Desktop</a>
+            <br>
+            <a onclick="addFile('file');">New File</a>
+            <br>
+            <a onclick="document.getElementById('file-input').click();">Install Apps</a>
+            <input id="file-input" type="file" name="name" onchange="addApp(this.files)" style="display: none;" />
+            <br>
+            <a onclick="$('#all-apps').show()">All Apps</a>
+            <br>
+            <a onclick="loadBackground();">New Background</a>
+        </ul>
+        <!-- Sowwyz#1337 -->
+        <div class="start-menu">
+            <div class="start-menu__list">
+                <div class="media">
+                    <a class="user-info menu-toggle" href="#" data-menu="user">
+                        <img class="user-info__img media__img" src="./Sowwyz/icons/profile.png">
+                        <div class="user-info__name media__body">
+                            <span id="currentUser">Demo Account</span>
+                        </div>
+                    </a>
+                    <div class="menu" data-menu="user">
+                        <a href="#">Change account picture</a>
+                        <a href="#" onclick="user('lock')">Lock</a>
+                        <a href="#" onclick="user('logout')">Switch User</a>
+                    </div>
+                    <a class="user-info__power menu-toggle" href="#" data-menu="power">
+                        <strong>✲</strong>
+                        <!--Sowwyz#1337-->
+                    </a>
+                </div>
+                <!--Sowwyz#1337-->
+                <div class="menu" data-menu="power">
+                    <a onclick="user('sleep');">Sleep</a>
+                    <a onclick="window.close();" href="#">Power off</a>
+                    <a onclick="location.reload(false);" href="#">Reset</a>
+                </div>
+
+                <!--Sowwyz#1337-->
+                <ul class="start-menu__recent">
+                    <li>
+                        <a onclick="startProgram('', 'https://www.bing.com');">
+                            <i><img class="icons" src="./Sowwyz/icons/google.png" />Web Browser</i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" onclick="startProgram('Notepad', '');">
+                            <i><img class="icons" src="./applications/Notepad/favicon.png" />Notepad</i>
+                        </a>
+                    </li>
+                    <li class="start-menu__notepad">
+                        <a onclick="startProgram('', 'http://localhost:8080/?dir=Home');">
+                            <i class="fa fa-pencil" style="display:none;"></i><i><img class="icons" src="./Sowwyz/icons/files.png" />Files</i>
+                        </a>
+                    </li>
+                </ul>
+
+                <a id="all-appsBTN" href="#">
+                    All apps
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+                <input type="text" id="search__input" placeholder="search" onkeydown="navigate(event);" spellcheck="false" autocomplete="off" autofocus></input>
+            </div>
+        </div>
+        <!--Sowwyz#1337-->
+        <!--Sowwyz#1337-->
+        <ul id="all-apps" style="display: none;">
+            <button id="allAppsCloseBTN" type="button">exit</button>
+
+            <div class="draw__item" onclick="startProgram('', 'https://www.bing.com'); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./Sowwyz/icons/google.png"></img><br>
+                <text>Web Browser</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('Notepad', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/Notepad/favicon.png"></img><br>
+                <text>Notepad</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('', 'http://localhost:8080/?dir=Home'); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./Sowwyz/icons/files.png"></img><br>
+                <text>Files</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('Google Docs', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/Google Docs/favicon.png"></img><br>
+                <text>Docs</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('Google Slides', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/Google Slides/favicon.png"></img><br>
+                <text>Slides</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('Google Sheets', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/Google Sheets/favicon.png"></img><br>
+                <text>Sheets</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('PDF Viewer', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/PDF Viewer/favicon.png"></img><br>
+                <text>PDF Viewer</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('Calculator', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/Calculator/favicon.png"></img><br>
+                <text>Calculator</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('Camera', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/Camera/favicon.png"></img><br>
+                <text>Camera</text>
+            </div>
+            <div class="draw__item" onclick="startProgram('Calender', ''); $('#all-apps').hide();">
+                <button class="deleteBTN">x</button>
+                <img class="desktop_icons" src="./applications/Calender/favicon.png"></img><br>
+                <text>Calender</text>
+            </div>
+        </ul>
+        <!--Sowwyz#1337-->
+        <div class="taskbar">
+            <a id="superButton" class="taskbar__item taskbar__item--start" href="javascript:void(0)">
+                <b>X</b>
+            </a>
+
+            <div class="taskbar__tray">
+                <span class="wrapper-taskbar" id="appsTray">
+                </span>
+
+                <span class="time" onclick="startProgram('Calender', '');"><p id="timeDisplay"></p></span>
+                <button id="showdesktopBTN" type="button" onclick="showDesktop();"></button>
+            </div>
+        </div>
+        <!--Sowwyz#1337-->
+    </div>
+    <!--Sowwyz#1337-->
+</body>
+<!--Sowwyz#1337-->
+<footer>
+    <script src="./Sowwyz/sys/dist/desktop.js"></script>
+    <script src="./Sowwyz/sys/dist/script.js"></script>
+</footer>
+<!--Sowwyz#1337-->
+</html>
+<!--Sowwyz#1337-->

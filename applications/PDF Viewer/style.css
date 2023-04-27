@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+#pdfContainer {
+	position: absolute;
+	z-index: -1;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+input {
+	margin: 0 0 10px 0;
+}
+
+#loadBTN {
+	padding-right: 0px;
+}
+
+input[type="button"] {
+	border-style: solid;
+	border-width: thin;
+	border-color: #abb2bf;
+	color: #d7dae0;
+	background-color: #282c34;
+	font-size: 14px;
+	padding: 2.5px;
+	padding-bottom: 5px !important;
+}
+
+input[type="button"]:hover {
+	background-color: #2a2e36;
+	-moz-box-shadow:    1.5px 1.5px 2.5px 3px #2e2e2e;
+	-webkit-box-shadow: 1.5px 1.5px 2.5px 3px #2e2e2e;
+	box-shadow:         1.5px 1.5px 2.5px 3px #2e2e2e;
+}
+
+.pdfobject-container {
+	height: 30rem; border: 1rem solid rgba(0,0,0,.1);
+}

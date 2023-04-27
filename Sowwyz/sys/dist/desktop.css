@@ -1,0 +1,148 @@
+/* Sowwyz#1337 */
+.desktop__item {
+  display: inline-block;
+  position: static;
+  margin-right: 4px;
+  text-align: center;
+  width: 68px;
+  height: 82px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  color: white;
+  transition: all 100ms;
+  text-align: center;
+  margin-top: 4px;
+}
+.desktop__item:hover {
+  background-color: rgba(120, 144, 156, 0.15);
+}
+
+.desktop_icons {
+  position: relative;
+  height: 56px;
+  width: 56px;
+}
+
+img.icons {
+  position: relative;
+  height: 38px;
+  width: 38px;
+  top: 2.5px;
+}
+
+.waitingInput {
+  position: relative;
+  width: 42px;
+  color: white;
+  font-size: 12px;
+  left: -2px;
+  border-style: none;
+  background-color: transparent;
+}
+
+#editDesktopBTN {
+  position: absolute;
+  right: 5px;
+  top: 2.5px;
+  font-size: 22px;
+  color: white;
+}
+#editDesktopBTN:hover {
+  color: red;
+}
+
+#superButton {
+  display: block;
+  font-size: 30px;
+}
+
+.contextMenu {
+  position: absolute;
+  background-color: #f9f9f9;
+  color: #282c34;
+  font-size: 20px;
+  padding: 8px;
+  width: 172px;
+  border-style: outset;
+  border-width: thin;
+  border-color: white;
+  animation: fadein 0.45s;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.1);
+  filter: grayscale(0.1) drop-shadow(16px 16px 20px #21252b);
+  opacity: 0.95;
+  z-index: 2;
+}
+.contextMenu a:visited {
+  color: #282c34;
+}
+.contextMenu a:hover {
+  background-color: #eee;
+  cursor: pointer;
+  border-left-style: groove;
+}
+.contextMenu #contextMenuTitle {
+  font-size: 20px;
+}
+
+.media {
+  display: flex;
+}
+
+.media__img,
+.media__body {
+  flex: 0 1 auto;
+}
+
+.media__body {
+  padding-left: 10px;
+}
+/* Sowwyzzzzzzz#1337 */
+.window__titlebar:after, .desktop:after, .desktop {
+  background-size: cover;
+  background-position: 50%;
+  background-attachment: fixed;
+}
+/* Sowwyz#1337 */
+.desktop {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#desktopBG {
+  position: fixed;
+  background-image: url("");
+  height: 100%;
+}
+/* Sowwyz#1337 */
+#search__input {
+  position: relative;
+  top: 15px;
+  left: 12px;
+  border-color: #202340;
+  color: white;
+  background-color: #000;
+  font-size: large;
+  padding: 9px;
+  cursor: text;
+  opacity: 0.95;
+}
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
+/* Sowwyz#1337 */
